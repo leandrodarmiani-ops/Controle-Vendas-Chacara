@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sítio da Eli | Controle da Produção Rural</title>
+<style>
+:root{--bg:#f5f6ed;--card:#fffefa;--tx:#263a2c;--mu:#6d796d;--pr:#b92738;--ok:#337849;--wa:#ac751b;--bd:#dfe6d7;--forest:#244b32;--leaf:#4d7c44;--cream:#fff9e9;color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:100px}
+header{background:linear-gradient(112deg,#173b2b 0%,#2b613d 66%,#477b43 100%);color:white;position:relative;overflow:hidden;padding:22px max(18px,calc((100vw - 1040px)/2));box-shadow:0 5px 20px #1c40271b}
+header:before{content:'🍃';position:absolute;right:145px;top:-35px;font-size:140px;opacity:.13;transform:rotate(-25deg)}header:after{content:'🍓 🥒';position:absolute;right:max(24px,calc((100vw - 1050px)/2));top:5px;font-size:82px;filter:drop-shadow(0 7px 8px #12291a55);transform:rotate(-13deg)}
+.brand-kicker{display:block;font-size:11px;letter-spacing:2.3px;text-transform:uppercase;color:#cde5c4;font-weight:800}.brand-title{display:block;font-weight:850;font-size:clamp(24px,4.2vw,35px);line-height:1.15;margin:5px 0}.brand-sub{display:block;color:#e0efda;font-size:13px;max-width:72%}
+nav{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;position:sticky;top:0;background:#f5f6eded;backdrop-filter:blur(10px);z-index:5;max-width:1080px;margin:auto}nav button{flex:1;min-width:95px;padding:11px 5px;border:1px solid var(--bd);background:#fff;color:var(--forest);border-radius:12px;font-weight:750;font-size:13px;box-shadow:0 2px 5px #1c402709}nav button.on{background:var(--forest);color:#fff;border-color:var(--forest)}nav button:hover:not(.on){background:#eaf0e4}
+main{padding:8px 16px 20px;max-width:1050px;margin:auto}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}@media(min-width:720px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.k{background:var(--card);border:1px solid var(--bd);border-radius:15px;padding:16px 14px;box-shadow:0 3px 14px #1d3d2810;border-top:4px solid #80a268}.k:nth-child(4n+1){border-top-color:#bb3341}.k:nth-child(4n+2){border-top-color:#5c985e}.k:nth-child(4n+3){border-top-color:#d2a246}.k small{color:var(--mu);display:block;font-size:12px;font-weight:650;margin-bottom:7px}.k b{font-size:clamp(16px,2.3vw,22px);overflow-wrap:anywhere;letter-spacing:-.3px}
+.card{background:var(--card);border:1px solid var(--bd);border-left:4px solid #7ba46c;border-radius:13px;padding:15px;margin-bottom:10px;box-shadow:0 2px 10px #1d3d280a}.row{display:flex;justify-content:space-between;gap:8px;align-items:center}.mu{color:var(--mu);font-size:13px}.tag{font-size:12px;padding:3px 9px;border-radius:99px;border:1px solid currentColor;white-space:nowrap;font-weight:700}.ok{color:var(--ok)}.wa{color:var(--wa)}.er{color:var(--pr)}h3{margin:22px 0 12px;font-size:16px;color:var(--forest);border-bottom:1px solid var(--bd);padding-bottom:8px}
+.acts{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.acts button,.btn{padding:9px 12px;border-radius:9px;border:1px solid #d5e1cf;background:#f7faf3;color:var(--forest);font-size:13px;font-weight:650}.acts button:hover,.btn:hover{background:#e9f2e4}.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--pr);color:#fff;border:0;border-radius:99px;padding:14px 23px;font-size:15px;font-weight:800;box-shadow:0 7px 19px #70202a50;z-index:6}
+dialog{width:calc(100% - 24px);max-width:480px;max-height:90vh;overflow:auto;border:1px solid var(--bd);border-radius:18px;background:var(--card);color:var(--tx);padding:22px;box-shadow:0 12px 45px #14251b55}dialog::backdrop{background:#112b1d9c}dialog>b{font-size:19px;color:var(--forest)}label{display:block;font-size:13px;color:var(--forest);font-weight:700;margin-top:11px}input,textarea,select{width:100%;padding:11px;border:1px solid #cfdcc8;border-radius:9px;background:#fff;color:var(--tx);font:inherit}input:focus,textarea:focus,select:focus{outline:2px solid #8fbb8c;outline-offset:1px}.chk{display:flex;gap:8px;align-items:center;color:var(--tx);font-size:15px}.chk input{width:auto}.pri{background:var(--pr);color:#fff;border:0;padding:12px;border-radius:10px;width:100%;margin-top:14px;font-size:16px;font-weight:750}.emp{text-align:center;color:var(--mu);padding:28px;background:#fff;border:1px dashed var(--bd);border-radius:12px}.tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px}.tools button{flex:1;min-width:145px}button{cursor:pointer}button:focus-visible{outline:3px solid #dba44b;outline-offset:2px}
+@media(max-width:400px){nav{gap:5px;padding:9px 8px}nav button{font-size:12px;padding:10px 2px}main{padding:8px 10px}header{padding:20px 14px}header:after{right:12px;font-size:65px}.brand-sub{max-width:75%}.k{padding:12px 10px}}
+@media print{header{background:white;color:black;box-shadow:none}nav,.fab,.acts,.tools{display:none!important}body{background:white;padding:0}.card,.k{break-inside:avoid}}
+header:before,header:after{display:none!important}
+.brand-wrap{display:flex;align-items:center;gap:22px;max-width:1050px;margin:auto}
+.brand-logo{width:125px;height:125px;object-fit:contain;flex:none;border-radius:50%;background:white;box-shadow:0 3px 15px #102c1a70}
+.brand-text{min-width:0}.brand-title{font-size:clamp(22px,3.5vw,32px)}.brand-sub{max-width:100%}
+@media(max-width:520px){.brand-wrap{gap:12px}.brand-logo{width:90px;height:90px}.brand-kicker{font-size:9px;letter-spacing:1px}.brand-sub{font-size:11px}}
+</style>
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#244b32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Sítio da Eli">
+<link rel="apple-touch-icon" href="./icon-192.png">
+</head>
+<body>
+<header><div class="brand-wrap"><img class="brand-logo" alt="Logotipo Sítio da Eli — Da nossa terra para a sua casa" src="./logo.jpg"><div class="brand-text"><span class="brand-kicker">🌱 SÍTIO DA ELI</span><span class="brand-title">Controle da Produção Rural</span><span class="brand-sub">Da nossa terra para a sua casa</span></div></div></header>
+<nav id="nav"></nav>
+<main id="v"></main>
+<button class="fab" id="fab">+ Novo</button>
+<dialog id="dlg"></dialog>
+<input type="file" id="backupFile" accept=".json,application/json" style="display:none" onchange="importarBackup(event)">
+<script>
+const K='morango_v1'; // Mantém os registros anteriores
+const EMBALAGENS={'Morango':0.5,'Figo':0.5,'Framboesa':0.5,'Amora':0.5,'Mirtilo':0.5,'Pepino':20,'Pimentão':12,'Quiabo':15,'Vagem':15};
+const PRODUTOS=Object.keys(EMBALAGENS);
+const FRUTAS=['Morango','Figo','Framboesa','Amora','Mirtilo'];
+const produto=x=>x.produto||'Morango';
+const unidade=x=>x.unidade||'kg';
+const opProduto=x=>PRODUTOS.map(p=>`<option value="${p}" ${produto(x)===p?'selected':''}>${p}</option>`).join('');
+const unidadesPermitidas=p=>FRUTAS.includes(p)?['kg','bandeja']:['caixa'];
+const opUnidade=(x,entrada=false)=> (entrada?['kg']:unidadesPermitidas(produto(x))).map(u=>`<option value="${u}" ${unidade(x)===u?'selected':''}>${u}</option>`).join('');
+const peso=x=>(+x.qtd||0)*({'kg':1,'bandeja':0.5,'caixa':EMBALAGENS[produto(x)]||1}[unidade(x)]||1);
+const saldos=()=>PRODUTOS.map(p=>{const c=S.colheitas.filter(x=>produto(x)===p),v=S.vendas.filter(x=>produto(x)===p);return {p,entrada:c.reduce((a,x)=>a+peso(x),0),saida:v.reduce((a,x)=>a+peso(x),0)};});
+function mudaProdutoVenda(){const p=$('f9').value;$('f10').innerHTML=opUnidade({produto:p,unidade:FRUTAS.includes(p)?'kg':'caixa'});}
+let S={vendas:[],colheitas:[],gastos:[],cfg:{}},tab='resumo';
+try{const r=localStorage.getItem(K);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const $=id=>document.getElementById(id);
+const R=n=>(+n||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const N=n=>(+n||0).toLocaleString('pt-BR',{maximumFractionDigits:2});
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const D=d=>d?d.split('-').reverse().join('/'):'sem data';
+const today=()=>{const d=new Date();return new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+const tot=v=>(+v.qtd||0)*(+v.preco||0);
+const falta=v=>Math.max(0,tot(v)-(+v.pago||0));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,5);
+
+function nav(){
+  $('nav').innerHTML=[['resumo','🏡 Resumo'],['vendas','🍓 Vendas'],['colheitas','🌱 Colheita'],['estoque','📦 Estoque'],['gastos','🧺 Gastos']]
+   .map(([k,t])=>`<button class="${tab===k?'on':''}" onclick="tab='${k}';render()">${t}</button>`).join('');
+  $('fab').textContent={colheitas:'+ Colheita',gastos:'+ Gasto'}[tab]||'+ Venda';
+  $('fab').style.display=['resumo','estoque'].includes(tab)?'none':'block';
+}
+function status(v){
+  if(v.entregue)return['Entregue','ok'];
+  if(v.entrega&&v.entrega<today())return['Atrasada','er'];
+  if(v.entrega===today())return['Hoje','wa'];
+  return['A entregar','wa'];
+}
+function vendaCard(v){
+  const[s,c]=status(v),f=falta(v);
+  return `<div class="card"><div class="row"><b>${esc(v.cliente)||'Sem nome'}</b><span class="tag ${c}">${s}</span></div>
+  <div class="mu">${esc(produto(v))} · Entrega: ${D(v.entrega)} · ${N(v.qtd)} ${esc(unidade(v))} × ${R(v.preco)}</div>
+  <div class="row" style="margin-top:6px"><b>${R(tot(v))}</b>
+  <span class="${f?'er':'ok'}">${f?'Falta '+R(f):'Pago ✓'}</span></div>
+  ${v.obs?`<div class="mu">${esc(v.obs)}</div>`:''}
+  <div class="acts">
+   ${v.entregue?'':`<button onclick="entregar('${v.id}')">✓ Entregue</button>`}
+   ${f?`<button onclick="quitar('${v.id}')">💰 Quitar</button>`:''}
+   <button onclick="enviar('${v.id}')">💬 Enviar</button>
+   <button onclick="pedido('${v.id}')">📄 Pedido</button>
+   <button onclick="formVenda('${v.id}')">Editar</button>
+   <button style="color:var(--pr)" onclick="apaga('vendas','${v.id}')">🗑 Excluir</button></div></div>`;
+}
+function render(){
+  nav();const V=S.vendas,H=S.colheitas;let h='';
+  if(tab==='resumo'){
+    const T=V.reduce((a,v)=>a+tot(v),0),P=V.reduce((a,v)=>a+(+v.pago||0),0);
+    const itens=saldos(),ativos=itens.filter(x=>x.entrada||x.saida);
+    const GT=S.gastos.reduce((a,g)=>a+(+g.valor||0),0);
+    const ent=V.filter(v=>!v.entregue).sort((a,b)=>(a.entrega||'9').localeCompare(b.entrega||'9'));
+    const rec=V.filter(falta).sort((a,b)=>(a.entrega||'9').localeCompare(b.entrega||'9'));
+    h=`<div class="grid">
+    <div class="k"><small>Total vendido</small><b>${R(T)}</b></div>
+    <div class="k"><small>Já recebido</small><b class="ok">${R(P)}</b></div>
+    <div class="k"><small>A receber</small><b class="er">${R(T-P)}</b></div>
+    <div class="k"><small>Entregas pendentes</small><b>${ent.length}</b></div>
+    <div class="k"><small>Produtos cadastrados</small><b>${PRODUTOS.length}</b></div>
+    <div class="k"><small>Itens movimentados</small><b>${ativos.length}</b></div>
+    <div class="k"><small>Gastos</small><b class="er">${R(GT)}</b></div>
+    <div class="k"><small>Lucro (vendido − gastos)</small><b class="${T-GT<0?'er':'ok'}">${R(T-GT)}</b></div></div>
+    <div class="tools"><button class="btn" onclick="baixarBackup()">⬇ Backup completo (JSON)</button><button class="btn" onclick="$('backupFile').click()">⬆ Restaurar backup</button><button class="btn" onclick="exportar()">📊 Exportar vendas (CSV)</button></div>
+     <h3>📦 Próximas entregas</h3>${ent.slice(0,5).map(vendaCard).join('')||'<div class="emp">Nenhuma entrega pendente</div>'}
+    <h3>💰 Pagamentos a receber</h3>${rec.slice(0,5).map(vendaCard).join('')||'<div class="emp">Tudo pago 🎉</div>'}`;
+  }else if(tab==='vendas'){
+    const o=[...V].sort((a,b)=>(a.entregue-b.entregue)||(a.entrega||'9').localeCompare(b.entrega||'9'));
+    h=o.map(vendaCard).join('')||'<div class="emp">Nenhuma venda ainda.<br>Toque em “+ Venda”.</div>';
+    if(V.length)h+='<button class="btn" onclick="exportar()" style="width:100%;margin-top:8px">Baixar planilha (CSV)</button>';
+  }else if(tab==='estoque'){
+    h='<h3>📦 Estoque por produto</h3><p class="mu">Saldo em kg = colheitas − vendas (incluindo pedidos ainda não entregues).</p>'+
+    saldos().map(x=>{const saldo=x.entrada-x.saida,emb=EMBALAGENS[x.p],tipo=FRUTAS.includes(x.p)?'bandejas de 500 g':'caixas de '+emb+' kg';return `<div class="card"><div class="row"><b>${esc(x.p)}</b><b class="${saldo<0?'er':'ok'}">${N(saldo)} kg</b></div><div class="mu">Colhido: ${N(x.entrada)} kg · Vendido: ${N(x.saida)} kg</div><div class="mu">Equivalente: ${N(saldo/emb)} ${tipo}</div></div>`}).join('');
+  }else if(tab==='gastos'){
+    const G=S.gastos,cats=['Entrega','Adubação','Combustível','Pedágio','Outros'];
+    const sm=c=>G.filter(g=>g.cat===c).reduce((a,g)=>a+(+g.valor||0),0);
+    h='<div class="grid">'+cats.filter(sm).map(c=>`<div class="k"><small>${c}</small><b>${R(sm(c))}</b></div>`).join('')
+     +`<div class="k"><small>Total de gastos</small><b class="er">${R(G.reduce((a,g)=>a+(+g.valor||0),0))}</b></div></div>`
+     +([...G].sort((a,b)=>b.data.localeCompare(a.data)).map(g=>`<div class="card" onclick="formGasto('${g.id}')">
+      <div class="row"><b>${esc(g.cat)}</b><b class="er">${R(g.valor)}</b></div>
+      <div class="mu">${D(g.data)}${g.desc?' · '+esc(g.desc):''}</div></div>`).join('')||'<div class="emp">Nenhum gasto registrado.<br>Toque em “+ Gasto”.</div>');
+  }else{
+    h=[...H].sort((a,b)=>b.data.localeCompare(a.data)).map(x=>`<div class="card" onclick="formColheita('${x.id}')">
+    <div class="row"><b>${esc(produto(x))} · ${D(x.data)}</b><b>${N(x.qtd)} ${esc(unidade(x))}</b></div>
+    <div class="mu">${esc(x.local)}${x.obs?' · '+esc(x.obs):''}</div></div>`).join('')||'<div class="emp">Nenhuma colheita registrada.<br>Toque em “+ Colheita”.</div>';
+  }
+  $('v').innerHTML=h;
+}
+function entregar(id){const v=S.vendas.find(x=>x.id===id);v.entregue=true;save();render()}
+function quitar(id){const v=S.vendas.find(x=>x.id===id);v.pago=tot(v);save();render()}
+function formVenda(id){
+  const v=S.vendas.find(x=>x.id===id)||{cliente:'',entrega:today(),qtd:'',preco:'',pago:0,entregue:false,obs:''};
+  $('dlg').innerHTML=`<b>${id?'Editar':'Nova'} venda</b>
+  <label>Cliente</label><input id="f1" value="${esc(v.cliente)}">
+  <label>WhatsApp do cliente (com DDD)</label><input id="f8" type="tel" inputmode="tel" value="${esc(v.tel||'')}">
+  <label>Data de entrega</label><input id="f2" type="date" value="${v.entrega}">
+  <label>Produto</label><select id="f9" onchange="mudaProdutoVenda()">${opProduto(v)}</select>
+  <label>Unidade de venda</label><select id="f10">${opUnidade(v)}</select>
+  <label>Quantidade</label><input id="f3" type="number" inputmode="decimal" value="${v.qtd}">
+  <label>Preço por unidade selecionada (R$)</label><input id="f4" type="number" inputmode="decimal" step="0.01" value="${v.preco}">
+  <label>Valor já pago (R$)</label><input id="f5" type="number" inputmode="decimal" step="0.01" value="${v.pago}">
+  <label>Observação</label><input id="f6" value="${esc(v.obs)}">
+  <label class="chk"><input id="f7" type="checkbox" ${v.entregue?'checked':''}> Já entregue</label>
+  <button class="pri" onclick="gravaVenda('${id||''}')">Salvar</button>
+  ${id?`<button class="btn" style="width:100%;margin-top:8px;color:var(--pr)" onclick="apaga('vendas','${id}')">Excluir</button>`:''}
+  <button class="btn" style="width:100%;margin-top:8px" onclick="$('dlg').close()">Cancelar</button>`;
+  $('dlg').showModal();
+}
+function gravaVenda(id){
+  if(!$('f1').value.trim()||!$('f2').value||!(+$('f3').value>0)||!(+$('f4').value>=0)||!(+$('f5').value>=0)){alert('Preencha cliente, data, quantidade positiva e valores válidos.');return;}
+  if(+$('f5').value>(+$('f3').value)*(+$('f4').value)){alert('O valor pago não pode superar o total da venda.');return;}
+  if(!unidadesPermitidas($('f9').value).includes($('f10').value)){alert("Unidade inválida para o produto.");return;}
+  const o={produto:$('f9').value,unidade:$('f10').value,id:id||uid(),cliente:$('f1').value.trim(),tel:$('f8').value.trim(),num:(S.vendas.find(x=>x.id===id)||{}).num,entrega:$('f2').value,qtd:+$('f3').value||0,preco:+$('f4').value||0,pago:+$('f5').value||0,obs:$('f6').value.trim(),entregue:$('f7').checked};
+  const i=S.vendas.findIndex(x=>x.id===id);i>=0?S.vendas[i]=o:S.vendas.push(o);
+  save();$('dlg').close();render();
+}
+function formColheita(id){
+  const x=S.colheitas.find(c=>c.id===id)||{data:today(),qtd:'',local:'',obs:''};
+  $('dlg').innerHTML=`<b>${id?'Editar':'Nova'} colheita</b>
+  <label>Data</label><input id="c1" type="date" value="${x.data}">
+  <label>Produto</label><select id="c5">${opProduto(x)}</select>
+  <label>Unidade de entrada</label><select id="c6">${opUnidade({produto:produto(x),unidade:"kg"},true)}</select>
+  <label>Quantidade colhida</label><input id="c2" type="number" inputmode="decimal" value="${x.qtd}">
+  <label>Canteiro / talhão</label><input id="c3" value="${esc(x.local)}">
+  <label>Observação</label><input id="c4" value="${esc(x.obs)}">
+  <button class="pri" onclick="gravaCol('${id||''}')">Salvar</button>
+  ${id?`<button class="btn" style="width:100%;margin-top:8px;color:var(--pr)" onclick="apaga('colheitas','${id}')">Excluir</button>`:''}
+  <button class="btn" style="width:100%;margin-top:8px" onclick="$('dlg').close()">Cancelar</button>`;
+  $('dlg').showModal();
+}
+function gravaCol(id){
+  if(!(+$('c2').value>0)){alert('Informe uma quantidade colhida maior que zero.');return;}
+  const o={produto:$('c5').value,unidade:"kg",id:id||uid(),data:$('c1').value||today(),qtd:+$('c2').value||0,local:$('c3').value.trim(),obs:$('c4').value.trim()};
+  const i=S.colheitas.findIndex(x=>x.id===id);i>=0?S.colheitas[i]=o:S.colheitas.push(o);
+  save();$('dlg').close();render();
+}
+function apaga(c,id){
+  $('dlg').innerHTML=`<b>Excluir este registro?</b><p class="mu">Não dá para desfazer.</p>
+  <button class="pri" style="background:var(--pr)" onclick="apagaOk('${c}','${id}')">Sim, excluir</button>
+  <button class="btn" style="width:100%;margin-top:8px" onclick="$('dlg').close()">Cancelar</button>`;
+  if(!$('dlg').open)$('dlg').showModal();
+}
+function apagaOk(c,id){S[c]=S[c].filter(x=>x.id!==id);save();$('dlg').close();render()}
+function baixarArquivo(nome,conteudo,tipo){
+  const blob=new Blob([conteudo],{type:tipo});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=nome;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+function baixarBackup(){
+  baixarArquivo('backup-producao-rural-'+today()+'.json',JSON.stringify({versao:1,exportadoEm:new Date().toISOString(),dados:S},null,2),'application/json;charset=utf-8');
+}
+async function importarBackup(event){
+  const file=event.target.files?.[0];if(!file)return;
+  try{
+    const obj=JSON.parse(await file.text());
+    const d=obj.dados||obj;
+    if(!d||!Array.isArray(d.vendas)||!Array.isArray(d.colheitas)||!Array.isArray(d.gastos)||!d.cfg||typeof d.cfg!=='object'||Array.isArray(d.cfg))throw Error('Formato inválido');
+    if(!confirm('Restaurar este backup? Os dados atuais serão substituídos. Faça um backup antes de continuar.'))return;
+    const novo={vendas:d.vendas,colheitas:d.colheitas,gastos:d.gastos,cfg:d.cfg};
+    localStorage.setItem(K,JSON.stringify(novo));S=novo;render();alert('Backup restaurado com sucesso!');
+  }catch(e){alert('Não foi possível importar: arquivo JSON inválido ou incompatível.')}finally{event.target.value='';}
+}
+function exportar(){
+  const l=[['Cliente','Telefone','Entrega','Produto','Unidade','Quantidade','Preço/unidade','Total','Pago','Falta','Entregue','Observação']];
+  S.vendas.forEach(v=>l.push([v.cliente,v.tel||'',v.entrega,produto(v),unidade(v),v.qtd,v.preco,tot(v),v.pago,falta(v),v.entregue?'Sim':'Não',v.obs||'']));
+  const csv='\ufeff'+l.map(r=>r.map(c=>`"${String(c??'').replace(/"/g,'""')}"`).join(';')).join('\r\n');
+  baixarArquivo('vendas-producao-rural-'+today()+'.csv',csv,'text/csv;charset=utf-8');
+}
+
+function txt(v){
+  const c=S.cfg,f=falta(v);
+  return `🌱 *PEDIDO Nº ${String(v.num).padStart(4,'0')}*
+${c.nome?'Produtor: '+c.nome+'\n':''}Cliente: ${v.cliente||'-'}
+Data de entrega: ${D(v.entrega)}
+
+${produto(v)}: ${N(v.qtd)} ${unidade(v)} × ${R(v.preco)}
+*Total: ${R(tot(v))}*
+Já pago: ${R(v.pago)}
+*A pagar: ${R(f)}*
+${v.obs?'\nObs.: '+v.obs+'\n':''}${f&&c.pix?'\nPix: '+c.pix:''}${c.tel?'\nContato: '+c.tel:''}
+
+Obrigado pela preferência! 🌱`;
+}
+function link(v){
+  let t=(v.tel||'').replace(/\D/g,'');if(t&&t.length<=11)t='55'+t;
+  $('pw').href='https://wa.me/'+t+'?text='+encodeURIComponent($('p4').value);
+}
+function enviar(id){
+  const v=S.vendas.find(x=>x.id===id);
+  if(!v.num){S.cfg.seq=(S.cfg.seq||0)+1;v.num=S.cfg.seq;save()}
+  let t=(v.tel||'').replace(/\D/g,'');if(t&&t.length<=11)t='55'+t;
+  const w=window.open('https://wa.me/'+t+'?text='+encodeURIComponent(txt(v)),'_blank');
+  if(!w)pedido(id);
+}
+function pedido(id){
+  const v=S.vendas.find(x=>x.id===id),c=S.cfg;
+  if(!v.num){c.seq=(c.seq||0)+1;v.num=c.seq;save()}
+  $('dlg').innerHTML=`<b>Pedido nº ${String(v.num).padStart(4,'0')}</b>
+  <label>Seu nome / sítio</label><input id="p1" value="${esc(c.nome||'')}">
+  <label>Seu telefone</label><input id="p2" value="${esc(c.tel||'')}">
+  <label>Chave Pix</label><input id="p3" value="${esc(c.pix||'')}">
+  <label>Mensagem (pode editar)</label><textarea id="p4" rows="11"></textarea>
+  <a class="pri" id="pw" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">Enviar por WhatsApp</a>
+  ${navigator.share?`<button class="btn" style="width:100%;margin-top:8px" onclick="navigator.share({text:$('p4').value}).catch(()=>{})">Compartilhar</button>`:''}
+  <button class="btn" style="width:100%;margin-top:8px" onclick="copia()">Copiar texto</button>
+  <button class="btn" style="width:100%;margin-top:8px;color:var(--pr)" onclick="apaga('vendas','${v.id}')">🗑 Excluir pedido</button>
+  <button class="btn" style="width:100%;margin-top:8px" onclick="$('dlg').close()">Fechar</button>`;
+  const up=()=>{c.nome=$('p1').value.trim();c.tel=$('p2').value.trim();c.pix=$('p3').value.trim();save();$('p4').value=txt(v);link(v)};
+  ['p1','p2','p3'].forEach(i=>$(i).oninput=up);
+  $('p4').oninput=()=>link(v);
+  up();$('dlg').showModal();
+}
+async function copia(){
+  const t=$('p4');
+  try{await navigator.clipboard.writeText(t.value)}catch(e){t.select();document.execCommand('copy')}
+}
+function formGasto(id){
+  const g=S.gastos.find(x=>x.id===id)||{data:today(),cat:'Combustível',valor:'',desc:''};
+  $('dlg').innerHTML=`<b>${id?'Editar':'Novo'} gasto</b>
+  <label>Data</label><input id="g1" type="date" value="${g.data}">
+  <label>Tipo</label><select id="g2">${['Entrega','Adubação','Combustível','Pedágio','Outros'].map(c=>`<option ${c===g.cat?'selected':''}>${c}</option>`).join('')}</select>
+  <label>Valor (R$)</label><input id="g3" type="number" inputmode="decimal" step="0.01" value="${g.valor}">
+  <label>Descrição</label><input id="g4" value="${esc(g.desc)}">
+  <button class="pri" onclick="gravaGasto('${id||''}')">Salvar</button>
+  ${id?`<button class="btn" style="width:100%;margin-top:8px;color:var(--pr)" onclick="apaga('gastos','${id}')">Excluir</button>`:''}
+  <button class="btn" style="width:100%;margin-top:8px" onclick="$('dlg').close()">Cancelar</button>`;
+  $('dlg').showModal();
+}
+function gravaGasto(id){
+  if(!(+$('g3').value>0)){alert('Informe um gasto maior que zero.');return;}
+  const o={id:id||uid(),data:$('g1').value||today(),cat:$('g2').value,valor:+$('g3').value||0,desc:$('g4').value.trim()};
+  const i=S.gastos.findIndex(x=>x.id===id);i>=0?S.gastos[i]=o:S.gastos.push(o);
+  save();$('dlg').close();render();
+}
+$('fab').onclick=()=>tab==='colheitas'?formColheita():tab==='gastos'?formGasto():formVenda();
+render();
+</script>
+<script>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(console.warn));
+}
+</script>
+</body>
+</html>

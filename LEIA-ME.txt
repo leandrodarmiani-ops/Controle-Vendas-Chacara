@@ -1,0 +1,17 @@
+SÍTIO DA ELI — PWA INSTALÁVEL (ANDROID E IPHONE)
+
+1. Crie um repositório no GitHub (ou use o existente).
+2. Envie os arquivos DE DENTRO desta pasta para a raiz do repositório, inclusive a pasta .github.
+   O arquivo index.html deve ficar na raiz.
+3. No GitHub, abra Settings > Pages > Build and deployment > Source e selecione GitHub Actions.
+4. Em Actions, execute ou aguarde "Publicar PWA no GitHub Pages".
+5. Abra o endereço https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/ no navegador do celular.
+6. ANDROID (Chrome): menu de 3 pontos > Instalar app / Adicionar à tela inicial.
+7. IPHONE (Safari): Compartilhar > Adicionar à Tela de Início > Adicionar.
+
+ATENÇÃO: NÃO é um APK. É um aplicativo PWA instalável pelo navegador.
+Para instalar, o aplicativo precisa ser publicado via HTTPS (GitHub Pages); abrir o HTML como arquivo local não habilita instalação PWA.
+Após o primeiro acesso, as páginas básicas ficam disponíveis offline. O WhatsApp precisa de internet.
+Os dados são gravados apenas no armazenamento do navegador/dispositivo, não sincronizam entre celulares.
+Ao trocar de navegador, dispositivo ou limpar dados do site, pode perder os registros. Faça backups JSON regularmente.
+Se o site ficar público no GitHub Pages, qualquer pessoa com o link poderá acessar o programa, mas os dados locais de cada aparelho não são publicados.
